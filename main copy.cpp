@@ -68,7 +68,7 @@ public:
                     return s="Thanksgiving  Recess No class!";
             }
     friend makeup{}//If miss up too many class, make up on saturday
-
+    friend readinfile{}//read in files with calendar, and write them out
          };
 
 
