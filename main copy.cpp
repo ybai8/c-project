@@ -72,7 +72,7 @@ public:
          };
 
 
-//create buttons
+//create buttons "Create assignment", "backward one week", "calendar"
 //mainwindow.h
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
