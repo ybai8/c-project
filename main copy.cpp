@@ -62,11 +62,12 @@ public:
                     return s="Labor Day No class!";
                 if(d.month==10&&d.week==1&&d.day>13&&d.day<21)
                     return s="Fall Recess No class!";
-                if(d.month==11&&d.day==11)
+                if(d.month==11&&d.day==11) 
                     return s="Veterans Day No class!";
                 if(d.month==11&&d.week=4&&d.day>=25&&d.day<=30)
                     return s="Thanksgiving  Recess No class!";
             }
+    friend makeup{}//If miss up to many class, make up on saturday
 
          };
 
