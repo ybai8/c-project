@@ -67,7 +67,7 @@ public:
                 if(d.month==11&&d.week=4&&d.day>=25&&d.day<=30)
                     return s="Thanksgiving  Recess No class!";
             }
-    friend makeup{}//If miss up to many class, make up on saturday
+    friend makeup{}//If miss up too many class, make up on saturday
 
          };
 
