@@ -1,15 +1,8 @@
 #include<iostream>
 using namespace std;
 
-bool ppp(int a){
-            if((a%4==0&&a%100!=0)||a%400==0)
-                return 1;
-            else
-                return 0;
-        }
 class JulDate {
 private:
-    //const static int BASEYEAR;
     double jday;
     int year;
     int month;
@@ -21,7 +14,7 @@ private:
 public:
     JulDate(int year=2000,int month=1,int day=0,int hour=0,int min=00,int sec=00):
     year(year),month(month),day(day),hour(hour),min(min),sec(sec){}
-        static JulDate now(){
+        static JulDate now(){//Get time now
             struct tm *ptr;
             time_t lt;
             lt =time(NULL);
@@ -29,14 +22,14 @@ public:
             //cout<<ptr->tm_wday;
             return date(ptr->tm_year+1900,ptr->tm_mon+1,ptr->tm_mday,ptr->tm_hour,ptr->tm_min,ptr->tm_sec);
         }
-        friend bool g(JulDate a){
+        friend bool g(JulDate a){//leap year or not
             if((a.year%4==0&&a.year%100!=0)||a.year%400==0)
                 return 1;
             else
                 return 0;
         }
 
-        friend JulDate operator + (JulDate a,int b) {
+        friend JulDate operator + (JulDate a,int b) {//plus several days
             const int daysinmonth1[12]={31,29,31,30,31,30,31,31,30,31,30,31};
             const int daysinmonth2[12]={31,28,31,30,31,30,31,31,30,31,30,31};
 
@@ -49,8 +42,14 @@ public:
             else
                 return JulDate(a.year,a.month,a.day+b,a.hour,a.min,a.sec);
         }
+            friend bool weekday(JulDate d){//If the day is weekend
+                 if(d.wday==0||d.wday==6)
+                             return 1;//weekend
+                        else
+                                    return 0;//weekday
+            }
 
-         friend string festival(JulDate d){
+         friend string festival(JulDate d){//If the day is holiday
                 if(d.month==1&&d.week==1&&d.day>20&&d.day<28)
                     return s="Martin Luther King,Jr.Day No class!";
                 if(d.month==2&&d.week==1&&d.day>20&&d.day<28)
