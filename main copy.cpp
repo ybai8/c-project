@@ -68,10 +68,17 @@ public:
                     return s="Thanksgiving  Recess No class!";
             }
     friend makeup{}//If miss up too many class, make up on saturday
-    friend readinfile{}//read in files with calendar, and write them out
+    
          };
+class readinfile{//read in files with calendar, and write them out
+private:
+    string s;
+    public:
+    
 
 
+
+};
 //create buttons "Create assignment", "backward one week", "calendar"
 //mainwindow.h
 #ifndef MAINWINDOW_H
