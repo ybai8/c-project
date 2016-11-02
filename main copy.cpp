@@ -70,11 +70,13 @@ public:
     friend makeup{}//If miss up too many class, make up on saturday
     
          };
-class readinfile{//read in files with calendar, and write them out
+class file{//read in files with calendar, and write them out
 private:
     string s;
     public:
-    
+    file(string s):s(s){
+        ifstream infile;
+        infile.open(s);}
 
 
 
