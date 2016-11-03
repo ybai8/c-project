@@ -49,7 +49,7 @@ public:
                                     return 0;//weekday
             }
 
-         friend string festival(JulDate d){//If the day is holiday
+         friend string festival(JulDate d){//distinguish the festival date,avoid to create an arrangement on that date
                 if(d.month==1&&d.week==1&&d.day>20&&d.day<28)
                     return s="Martin Luther King,Jr.Day No class!";
                 if(d.month==2&&d.week==1&&d.day>20&&d.day<28)
@@ -80,6 +80,8 @@ private:
 
 
 
+};
+class makeup{// If miss a class, get everything pushed back, and define a makeup class
 };
 //create buttons "Create assignment", "backward one week", "calendar"
 //mainwindow.h
